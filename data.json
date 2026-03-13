@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "title": "Yury Shishkin — Media Kit",
+    "year": 2026
+  },
+  "hero": {
+    "firstName": "Yury",
+    "lastName": "Shishkin",
+    "role": "Founder & CEO of",
+    "company": "24.online",
+    "companyUrl": "https://24.online/",
+    "description": "eCommerce & AI expert. 18 years building technology companies that reshape how brands sell online.",
+    "pills": [
+      "Stanford GSB Alumni",
+      "150K+ Community",
+      "P&G · MARS · LG"
+    ],
+    "calendarUrl": "https://calendar.app.google/GUbx3fxJWAq52LJ36"
+  },
+  "stats": [
+    {
+      "platform": "instagram",
+      "label": "Instagram Followers",
+      "value": "148K+",
+      "url": "https://instagram.com/yury.ai"
+    },
+    {
+      "platform": "tiktok",
+      "label": "TikTok Followers",
+      "value": "75K",
+      "url": "https://tiktok.com/@yury.ai"
+    },
+    {
+      "platform": "linkedin",
+      "label": "LinkedIn Followers",
+      "value": "5.6K",
+      "url": "https://linkedin.com/in/yuryshishkin"
+    },
+    {
+      "platform": "views",
+      "label": "IG Monthly Views",
+      "value": "3M"
+    },
+    {
+      "platform": "community",
+      "label": "International Digital Forum Community",
+      "value": "2 000",
+      "subtitle": "brightest minds in eRetail"
+    }
+  ],
+  "about": {
+    "sectionLabel": "About the Founder",
+    "heading": "Building the future of eCommerce — since 2006",
+    "bio": "Yury Shishkin is one of the most prominent voices at the intersection of AI and online retail. With deep operational experience building eCommerce technology companies, he combines hands-on expertise with genuine thought leadership — speaking to founders and enterprise brands alike.",
+    "portraitUrl": "https://yury-ai.lovable.app/assets/yury-shishkin-B7VJNQ-T.jpg",
+    "highlights": [
+      "<span style=\"color:var(--gold);font-weight:700\">18+ years</span> building eCommerce technology companies across MENA, LATAM and Asia, launching US market currently",
+      "Founded <a href=\"https://24ttl.net/\" target=\"_blank\" rel=\"noopener noreferrer\">24TTL in 2008</a> — grew it to an 8-figure exit",
+      "CEO of <a href=\"https://24.online/\" target=\"_blank\" rel=\"noopener noreferrer\">24.online</a> — AI product photography platform for online retail",
+      "Founder of <a href=\"https://www.idrf.online/\" target=\"_blank\" rel=\"noopener noreferrer\">IDRF</a> (International Digital Retail Forum)",
+      "<span style=\"color:var(--gold)\">Stanford GSB Alumni</span> — works with Fortune 500 brands globally"
+    ],
+    "location": "Based in Dubai, UAE"
+  },
+  "appearances": {
+    "sectionLabel": "Recent Appearances",
+    "description": "Worlddef Dubai 2026 · Masterclass Stage — panel discussion \"No Ads, No Growth: The 2026 Reality for Amazon & eCommerce Sellers\" with Amazon Sellers Society",
+    "media": [
+      { "type": "image", "src": "https://yury-ai.lovable.app/assets/worlddef-panel-DuOmvle4.jpg", "alt": "Worlddef panel" },
+      { "type": "video", "src": "https://yury-ai.lovable.app/assets/worlddef-video-B6uzsNPx.mp4" },
+      { "type": "image", "src": "https://yury-ai.lovable.app/assets/worlddef-selfie-CPw-Fqgr.jpg", "alt": "Worlddef selfie" },
+      { "type": "video", "src": "https://yury-ai.lovable.app/assets/worlddef-video2-fFTpbKBr.mp4" }
+    ]
+  },
+  "audience": [
+    {
+      "platform": "instagram",
+      "label": "Instagram Audience",
+      "followers": "148K+",
+      "metric1": { "value": "3M", "label": "Views / 30 days", "class": "gold" },
+      "metric2": { "value": "715K", "label": "Unique accounts reached in the last 30 days" },
+      "topAges": ["Age 25–34", "Age 35–44"],
+      "topLocations": ["India", "United States", "Germany"]
+    },
+    {
+      "platform": "tiktok",
+      "label": "TikTok Audience",
+      "followers": "75K",
+      "metric1": { "value": "378K", "label": "Viewers / 28 days" },
+      "metric2": { "value": "+49.5%", "label": "Viewer growth (28 days)", "class": "green" },
+      "topCategories": ["eCommerce", "AI Tools", "Tech"]
+    },
+    {
+      "platform": "linkedin",
+      "label": "LinkedIn Audience",
+      "followers": "5.6K",
+      "metric1": { "value": "41%", "label": "Followers are Seniors in IT Services & Consulting", "class": "gold" },
+      "metric2": { "value": "6,000", "label": "Impressions · top performing post" },
+      "topLocations": ["Dubai", "San Francisco", "London"]
+    }
+  ],
+  "idrf": {
+    "heading": "Global Community of eCommerce Leaders",
+    "description": "Yury founded IDRF — International Digital Retail Forum — in 2019. Today it’s a global community of 2,000+ online retail experts, brand managers and e-retailers from companies like Nestlé, LG, Coca-Cola, L’Oréal, Samsung, NVIDIA, Danone, MARS and 50+ more enterprise brands.",
+    "pills": ["Since 2019", "2,000+ Members", "50+ Enterprise Brands"],
+    "media": [
+      { "type": "video", "src": "https://yury-ai.lovable.app/assets/idrf-awards-yLQaNhpX.mp4", "label": "IDRF Awards Ceremony" },
+      { "type": "image", "src": "https://yury-ai.lovable.app/assets/crop-idrf-stage-binh7o8w.jpg", "label": "IDRF · International Digital Retail Forum" },
+      { "type": "video", "src": "https://yury-ai.lovable.app/assets/idrf-fmcg-panel-CGuLMP0t.mp4", "label": "IDRF · FMCG & AI Panel" }
+    ],
+    "bannerUrl": "https://yury-ai.lovable.app/assets/idrf-stats-banner-lMgQ_X-e.png",
+    "cities": "🇦🇪 Dubai · 🇲🇽 Mexico · 🇮🇩 Jakarta · 🇰🇿 Almaty · 🇰🇷 Seoul · 🇬🇧 London",
+    "joinUrl": "https://idrf.online"
+  },
+  "collaboration": [
+    {
+      "icon": "monitor",
+      "title": "Sponsored Content",
+      "text": "Instagram Reels, Carousels & Stories · TikTok · LinkedIn posts · eCommerce community posts — your product inside authentic, story-driven content.",
+      "footnote": "avg. 15K+ reach per post",
+      "footnoteColor": "gold"
+    },
+    {
+      "icon": "user",
+      "title": "Speaking & Events",
+      "text": "Keynotes, panels and webinars with direct access to senior eCommerce and retail decision-makers.",
+      "footnote": "IDRF · Seamless · Shoptalk · custom events",
+      "footnoteColor": "muted"
+    },
+    {
+      "icon": "document",
+      "title": "Strategic & Content Partnerships",
+      "text": "SaaS integrations, newsletter sponsorships and advisory relationships that drive real business outcomes.",
+      "footnote": "case studies · advisory",
+      "footnoteColor": "muted"
+    }
+  ],
+  "cta": {
+    "heading": "Smart brands deserve<br>deep collaboration.",
+    "subtext": "Partnership slots are limited. Let’s talk.",
+    "availability": "Accepting partnerships for Q2 2026",
+    "email": "yury@24.online",
+    "calendarUrl": "https://calendar.app.google/GUbx3fxJWAq52LJ36"
+  },
+  "social": [
+    { "platform": "instagram", "url": "https://instagram.com/yury.ai" },
+    { "platform": "tiktok", "url": "https://tiktok.com/@yury.ai" },
+    { "platform": "linkedin", "url": "https://www.linkedin.com/in/shishkiny/" },
+    { "platform": "website", "url": "https://24.online" }
+  ],
+  "carousel": [
+    { "type": "image", "src": "idfr-stage-CLs0bnmU.jpg", "caption": "IDRF · New generation of eCommerce" },
+    { "type": "video", "src": "gsb-clip-CPwHtUvu.mp4", "caption": "Stanford GSB · Alumni" },
+    { "type": "image", "src": "ibm-CpNEQikQ.jpg", "caption": "IBM · Google for Entrepreneurs · DMCC" },
+    { "type": "image", "src": "gsb100-D9VwFVYN.jpg", "caption": "Stanford GSB · #GSB100 Centennial" },
+    { "type": "image", "src": "speaking-B9mujfnj.webp", "caption": "Conference keynote · eCommerce market" },
+    { "type": "video", "src": "gsb-alumni-Bi1TRZiI.mp4", "caption": "Dubai AI Week 2025 · Museum of the Future" },
+    { "type": "image", "src": "idrf2-KZ72ynXX.jpg", "caption": "IDRF 2019 · Moscow" },
+    { "type": "video", "src": "irce-chicago-B9y9IMMU.mp4", "caption": "IRCE 2019 · Chicago" }
+  ]
+}
