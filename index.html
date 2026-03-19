@@ -458,7 +458,7 @@ fetch('data.json').then(r => r.json()).then(D => {
 
     try {
       const res = await fetch(
-        \`https://api.hsforms.com/submissions/v3/integration/submit/\${HS_PORTAL}/\${HS_FORM}\`,
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${HS_FORM}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
