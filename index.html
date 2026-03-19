@@ -476,7 +476,7 @@ fetch('data.json').then(r => r.json()).then(D => {
       }
     } catch(err) {
       btn.disabled = false;
-      btn.textContent = 'Send Message →+;
+      btn.textContent = 'Send Message →';
       errEl.textContent = 'Something went wrong. Please try again or email directly.';
       errEl.style.display = 'block';
     }
