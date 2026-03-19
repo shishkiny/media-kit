@@ -9,10 +9,10 @@
     "role": "Founder & CEO of",
     "company": "24.online",
     "companyUrl": "https://24.online/",
-    "description": "eCommerce & AI expert. 18 years building technology companies that reshape how brands sell online.",
+    "description": "eCommerce & AI expert. 18 years building tecnology companies that reshape how brands sell online.",
     "pills": [
       "Stanford GSB Alumni",
-      "150K+ Community",
+      "161K+ Community",
       "P&G · MARS · LG"
     ],
     "calendarUrl": "https://calendar.app.google/GUbx3fxJWAq52LJ36"
@@ -21,7 +21,7 @@
     {
       "platform": "instagram",
       "label": "Instagram Followers",
-      "value": "148K+",
+            "value": "161K",
       "url": "https://instagram.com/yury.ai"
     },
     {
@@ -76,7 +76,7 @@
     {
       "platform": "instagram",
       "label": "Instagram Audience",
-      "followers": "148K+",
+            "followers": "161K",
       "metric1": { "value": "3M", "label": "Views / 30 days", "class": "gold" },
       "metric2": { "value": "715K", "label": "Unique accounts reached in the last 30 days" },
       "topAges": ["Age 25–34", "Age 35–44"],
