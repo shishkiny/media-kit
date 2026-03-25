@@ -191,7 +191,7 @@ img,video{display:block;max-width:100%}
 <section class="section fade-section" id="appearancesSection"></section>
 <section class="section fade-section" id="audienceSection"></section>
 <section class="section fade-section" id="idrfSection"></section>
-<section class="section fade-section" id="speakingVideosSection"></section>
+<section class="fade-section" id="speakingVideosSection"></section>
 <section class="section fade-section" id="collabSection"></section>
 <section class="cta fade-section" id="ctaSection"></section>
 <footer class="footer" id="footerSection"></footer>
@@ -353,22 +353,18 @@ fetch('data.json').then(r => r.json()).then(D => {
 
   // ── SPEAKING VIDEOS ──
   if (D.speakingVideos && D.speakingVideos.length) {
+    const spDoubled = [...D.speakingVideos, ...D.speakingVideos];
+    const spCards = spDoubled.map(v => {
+      const src = v.src.startsWith('http') ? v.src : ASSET_BASE + v.src;
+      const media = v.type === 'image'
+        ? `<img src="${src}" alt="${v.caption}" loading="lazy">`
+        : `<video src="${src}" autoplay muted loop playsinline></video>`;
+      return `<div class="carousel-card"><div class="media-wrap">${media}</div><p class="caption">${v.caption}</p></div>`;
+    }).join('');
     document.getElementById('speakingVideosSection').innerHTML = `
-      <div class="inner">
-        <p class="label" style="margin-bottom:24px">Speaking Highlights</p>
-        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
-          ${D.speakingVideos.map(v => {
-            const src = v.src.startsWith('http') ? v.src : ASSET_BASE + v.src;
-            const media = v.type === 'image'
-              ? `<img src="${src}" alt="${v.caption}" loading="lazy">`
-              : `<video src="${src}" autoplay muted loop playsinline></video>`;
-            return `
-            <div class="carousel-card">
-              <div class="media-wrap">${media}</div>
-              <p class="caption">${v.caption}</p>
-            </div>`;
-          }).join('')}
-        </div>
+      <p class="label" style="padding:80px 24px 24px;display:block">Speaking Highlights</p>
+      <div class="carousel-wrap" style="padding:0 0 80px">
+        <div class="carousel-track">${spCards}</div>
       </div>`;
   }
 
