@@ -191,6 +191,7 @@ img,video{display:block;max-width:100%}
 <section class="section fade-section" id="appearancesSection"></section>
 <section class="section fade-section" id="audienceSection"></section>
 <section class="section fade-section" id="idrfSection"></section>
+<section class="section fade-section" id="speakingVideosSection"></section>
 <section class="section fade-section" id="collabSection"></section>
 <section class="cta fade-section" id="ctaSection"></section>
 <footer class="footer" id="footerSection"></footer>
@@ -222,12 +223,12 @@ fetch('data.json').then(r => r.json()).then(D => {
     let media;
     if (item.type === 'image') {
       media = document.createElement('img');
-      media.src = ASSET_BASE + item.src;
+      media.src = item.src.startsWith('http') ? item.src : ASSET_BASE + item.src;
       media.alt = item.caption;
       media.loading = 'lazy';
     } else {
       media = document.createElement('video');
-      media.src = ASSET_BASE + item.src;
+      media.src = item.src.startsWith('http') ? item.src : ASSET_BASE + item.src;
       media.autoplay = true; media.muted = true; media.loop = true; media.playsInline = true;
     }
     wrap.appendChild(media);
@@ -349,6 +350,23 @@ fetch('data.json').then(r => r.json()).then(D => {
       <p style="text-align:center;color:var(--muted);font-size:14px;margin-bottom:16px">${D.idrf.cities}</p>
       <p style="text-align:center"><a href="${D.idrf.joinUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:600">Join IDRF Community →</a></p>
     </div>`;
+
+  // ── SPEAKING VIDEOS ──
+  if (D.speakingVideos && D.speakingVideos.length) {
+    document.getElementById('speakingVideosSection').innerHTML = `
+      <div class="inner">
+        <p class="label" style="margin-bottom:24px">Speaking Highlights</p>
+        <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+          ${D.speakingVideos.map(v => `
+            <div class="carousel-card">
+              <div class="media-wrap">
+                <video src="${v.src.startsWith('http') ? v.src : ASSET_BASE + v.src}" autoplay muted loop playsinline></video>
+              </div>
+              <p class="caption">${v.caption}</p>
+            </div>`).join('')}
+        </div>
+      </div>`;
+  }
 
   // ── COLLABORATION ──
   document.getElementById('collabSection').innerHTML = `
