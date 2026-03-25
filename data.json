@@ -267,6 +267,23 @@
       "src": "https://yury.24.online/clips/img_7367.mp4",
       "caption": ""
     },
+  ],
+  "speakingVideos": [
+    {
+      "type": "video",
+      "src": "gsb-clip-CPwHtUvu.mp4",
+      "caption": "Stanford GSB · Alumni"
+    },
+    {
+      "type": "video",
+      "src": "gsb-alumni-Bi1TRZiI.mp4",
+      "caption": "Dubai AI Week 2025 · Museum of the Future"
+    },
+    {
+      "type": "video",
+      "src": "irce-chicago-B9y9IMMU.mp4",
+      "caption": "IRCE 2019 · Chicago"
+    },
     {
       "type": "image",
       "src": "idfr-stage-CLs0bnmU.jpg",
@@ -286,23 +303,6 @@
       "type": "image",
       "src": "speaking-B9mujfnj.webp",
       "caption": "Conference keynote · eCommerce market"
-    }
-  ],
-  "speakingVideos": [
-    {
-      "type": "video",
-      "src": "gsb-clip-CPwHtUvu.mp4",
-      "caption": "Stanford GSB · Alumni"
-    },
-    {
-      "type": "video",
-      "src": "gsb-alumni-Bi1TRZiI.mp4",
-      "caption": "Dubai AI Week 2025 · Museum of the Future"
-    },
-    {
-      "type": "video",
-      "src": "irce-chicago-B9y9IMMU.mp4",
-      "caption": "IRCE 2019 · Chicago"
     }
   ]
 }

@@ -357,13 +357,17 @@ fetch('data.json').then(r => r.json()).then(D => {
       <div class="inner">
         <p class="label" style="margin-bottom:24px">Speaking Highlights</p>
         <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
-          ${D.speakingVideos.map(v => `
+          ${D.speakingVideos.map(v => {
+            const src = v.src.startsWith('http') ? v.src : ASSET_BASE + v.src;
+            const media = v.type === 'image'
+              ? `<img src="${src}" alt="${v.caption}" loading="lazy">`
+              : `<video src="${src}" autoplay muted loop playsinline></video>`;
+            return `
             <div class="carousel-card">
-              <div class="media-wrap">
-                <video src="${v.src.startsWith('http') ? v.src : ASSET_BASE + v.src}" autoplay muted loop playsinline></video>
-              </div>
+              <div class="media-wrap">${media}</div>
               <p class="caption">${v.caption}</p>
-            </div>`).join('')}
+            </div>`;
+          }).join('')}
         </div>
       </div>`;
   }
