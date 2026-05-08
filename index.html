@@ -174,6 +174,19 @@ img,video{display:block;max-width:100%}
 .footer-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
 .footer-inner span{font-size:14px}
 
+/* ── SKOOL ── */
+.skool-wrap{background:linear-gradient(135deg,#1a1a1a 0%,#141414 100%);border:1px solid rgba(245,197,24,0.15);border-radius:20px;padding:40px;overflow:hidden;position:relative}
+.skool-wrap::before{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(245,197,24,0.08) 0%,transparent 70%);pointer-events:none}
+.skool-header{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:32px}
+.skool-features{display:grid;grid-template-columns:1fr;gap:16px;margin:28px 0}
+@media(min-width:640px){.skool-features{grid-template-columns:1fr 1fr 1fr}}
+.skool-feature{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px;padding:20px}
+.skool-feature-icon{width:36px;height:36px;border-radius:8px;background:rgba(245,197,24,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:var(--gold)}
+.skool-feature h4{font-size:15px;font-weight:600;color:#fff;margin-bottom:8px}
+.skool-feature p{font-size:13px;color:var(--muted);line-height:1.5}
+.btn-skool{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#000;font-weight:700;padding:13px 28px;border-radius:9999px;font-size:15px;transition:filter 0.2s;white-space:nowrap}
+.btn-skool:hover{filter:brightness(1.1)}
+
 /* ── LOVABLE ── */
 [data-lovable-badge],#lovable-badge{display:none!important}
 </style>
@@ -191,6 +204,7 @@ img,video{display:block;max-width:100%}
 <section class="section fade-section" id="appearancesSection"></section>
 <section class="section fade-section" id="audienceSection"></section>
 <section class="section fade-section" id="idrfSection"></section>
+<section class="section fade-section" id="skoolSection"></section>
 <section class="section fade-section" id="collabSection"></section>
 <section class="fade-section" id="speakingVideosSection"></section>
 <section class="cta fade-section" id="ctaSection"></section>
@@ -350,6 +364,45 @@ fetch('data.json').then(r => r.json()).then(D => {
       <p style="text-align:center;color:var(--muted);font-size:14px;margin-bottom:16px">${D.idrf.cities}</p>
       <p style="text-align:center"><a href="${D.idrf.joinUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:600">Join IDRF Community →</a></p>
     </div>`;
+
+  // ── SKOOL ──
+  if (D.skool) {
+    const sk = D.skool;
+    const featureIconMap = {
+      play: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
+      chat: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+      qa:   `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`
+    };
+    const membersHtml = sk.members
+      ? `<div style="text-align:center;margin-bottom:8px"><span style="font-size:2rem;font-weight:700;color:var(--gold)">${sk.members}</span><p class="muted" style="font-size:13px">Members</p></div>`
+      : '';
+    document.getElementById('skoolSection').innerHTML = `
+      <div class="inner">
+        <p class="label" style="margin-bottom:16px">${sk.sectionLabel}</p>
+        <div class="skool-wrap">
+          <div class="skool-header">
+            <div style="max-width:600px">
+              <h2 class="serif" style="font-size:1.875rem;font-weight:700;margin-bottom:12px">${sk.heading}</h2>
+              <p class="muted" style="font-size:15px;line-height:1.7;margin-bottom:20px">${sk.description}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:10px">${sk.pills.map(p => `<span class="pill">${p}</span>`).join('')}</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:4px">
+              ${membersHtml}
+              <a href="${sk.joinUrl}" target="_blank" rel="noopener noreferrer" class="btn-skool">Join Free →</a>
+              <p class="muted" style="font-size:12px;text-align:center">skool.com/yury-ai</p>
+            </div>
+          </div>
+          <div class="skool-features">
+            ${sk.features.map(f => `
+              <div class="skool-feature">
+                <div class="skool-feature-icon">${featureIconMap[f.icon] || ''}</div>
+                <h4>${f.title}</h4>
+                <p>${f.text}</p>
+              </div>`).join('')}
+          </div>
+        </div>
+      </div>`;
+  }
 
   // ── SPEAKING VIDEOS ──
   if (D.speakingVideos && D.speakingVideos.length) {
