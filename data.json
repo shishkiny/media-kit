@@ -37,6 +37,12 @@
       "url": "https://linkedin.com/in/yuryshishkin"
     },
     {
+      "platform": "youtube",
+      "label": "YouTube Subscribers",
+      "value": "10K",
+      "url": "https://www.youtube.com/@Yury_AI"
+    },
+    {
       "platform": "views",
       "label": "IG Monthly Views",
       "value": "3M"
@@ -122,6 +128,25 @@
         "value": "+49.5%",
         "label": "Viewer growth (28 days)",
         "class": "green"
+      },
+      "topCategories": [
+        "eCommerce",
+        "AI Tools",
+        "Tech"
+      ]
+    },
+    {
+      "platform": "youtube",
+      "label": "YouTube Audience",
+      "followers": "10K",
+      "metric1": {
+        "value": "10K",
+        "label": "Subscribers",
+        "class": "gold"
+      },
+      "metric2": {
+        "value": "Growing",
+        "label": "Channel launched 2025"
       },
       "topCategories": [
         "eCommerce",
@@ -237,6 +262,10 @@
     {
       "platform": "linkedin",
       "url": "https://www.linkedin.com/in/shishkiny/"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@Yury_AI"
     },
     {
       "platform": "website",
