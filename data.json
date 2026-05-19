@@ -122,7 +122,8 @@
       "followers": "90K",
       "metric1": {
         "value": "378K",
-        "label": "Viewers / 28 days"
+        "label": "Viewers / 28 days",
+        "class": "gold"
       },
       "metric2": {
         "value": "+49.5%",
