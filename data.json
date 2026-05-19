@@ -140,18 +140,23 @@
       "label": "YouTube Audience",
       "followers": "10K",
       "metric1": {
-        "value": "10K",
-        "label": "Subscribers",
+        "value": "589K",
+        "label": "Views / 28 days",
         "class": "gold"
       },
       "metric2": {
-        "value": "Growing",
-        "label": "Channel launched 2025"
+        "value": "+3.5K",
+        "label": "Subscribers gained (28 days)",
+        "class": "green"
       },
-      "topCategories": [
-        "eCommerce",
-        "AI Tools",
-        "Tech"
+      "topAges": [
+        "Age 25–34",
+        "Age 35–44"
+      ],
+      "topLocations": [
+        "United States",
+        "India",
+        "Germany"
       ]
     },
     {
