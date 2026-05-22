@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Юрий Шишкин — Медиакит</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#0d0d0d;color:#fff;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+
+/* ── VARIABLES ── */
+:root{
+  --bg:#0d0d0d;--card:#1a1a1a;--border:#2a2a2a;--gold:#f5c518;
+  --text:#ffffff;--muted:#a0a0a0;--green:#22c55e;--dark2:#111111;
+  --serif:'Playfair Display',serif;--sans:'Inter',sans-serif;
+}
+
+/* ── UTILITIES ── */
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.container{padding:0 64px}}
+@media(min-width:1024px){.container{padding:0 96px}}
+
+.pill{display:inline-block;border:1px solid var(--border);background:var(--card);border-radius:9999px;padding:6px 16px;font-size:14px;color:#fff}
+.tag{display:inline-block;background:var(--border);border-radius:9999px;padding:4px 12px;font-size:12px;color:#fff}
+.label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.serif{font-family:var(--serif)}
+.gold{color:var(--gold)}
+.muted{color:var(--muted)}
+.green{color:var(--green)}
+
+/* ── FADE IN ── */
+.fade-section{opacity:0;transform:translateY(32px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-section.visible{opacity:1;transform:translateY(0)}
+
+/* ── CAROUSEL ── */
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.carousel-wrap{overflow:hidden;padding:24px 0}
+.carousel-track{display:flex;gap:16px;width:max-content;animation:scroll 40s linear infinite}
+.carousel-track:hover{animation-play-state:paused}
+.carousel-card{flex-shrink:0;width:150px;display:flex;flex-direction:column;gap:8px}
+.carousel-card .media-wrap{width:100%;aspect-ratio:9/17;border-radius:12px;overflow:hidden;position:relative}
+.carousel-card .media-wrap img,.carousel-card .media-wrap video{width:100%;height:100%;object-fit:cover}
+.carousel-card .caption{font-size:13px;color:var(--muted);text-align:center;line-height:1.3;padding:0 4px}
+
+/* ── HERO ── */
+.hero{padding:40px 24px}
+@media(min-width:768px){.hero{padding:56px 64px}}
+@media(min-width:1024px){.hero{padding:56px 96px}}
+.hero h1{font-size:3.5rem;font-weight:700;line-height:1.05;margin-bottom:24px}
+@media(min-width:768px){.hero h1{font-size:5.5rem}}
+.hero .label-row{display:flex;align-items:center;gap:12px;margin-bottom:32px}
+.hero .label-row .line{width:32px;height:1px;background:var(--gold)}
+.hero .subtitle{font-size:18px;margin-bottom:8px}
+.hero .desc{color:var(--muted);font-size:18px;max-width:560px;margin-bottom:32px}
+.hero .pills{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+.hero .buttons{display:flex;flex-wrap:wrap;gap:16px}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#000;font-weight:600;padding:12px 28px;border-radius:9999px;border:none;cursor:pointer;font-size:15px;transition:filter 0.2s}
+.btn-gold:hover{filter:brightness(1.1)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--gold);font-weight:600;padding:12px 28px;border-radius:9999px;border:1px solid var(--gold);cursor:pointer;font-size:15px;transition:background 0.2s}
+.btn-outline:hover{background:rgba(245,197,24,0.1)}
+
+/* ── STATS BAR ── */
+.stats-bar{background:var(--dark2);padding:20px 24px;border-top:1px solid rgba(245,197,24,0.25);border-bottom:1px solid rgba(245,197,24,0.25)}
+@media(min-width:768px){.stats-bar{padding:20px 64px}}
+.stats-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;max-width:1200px;margin:0 auto}
+@media(min-width:1024px){.stats-row{flex-wrap:nowrap;gap:8px}}
+.stat-block{display:flex;align-items:center;gap:10px;padding:8px 0;cursor:pointer;transition:opacity 0.2s}
+.stat-block:hover{opacity:0.8}
+.stat-icon{width:32px;height:32px;border-radius:8px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stat-icon svg{width:16px;height:16px}
+.stat-text .stat-label{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:500;line-height:1.3}
+.stat-text .stat-value{color:var(--gold);font-size:1.25rem;font-weight:700;line-height:1.2}
+
+/* ── ABOUT ── */
+.about{padding:40px 24px}
+@media(min-width:768px){.about{padding:40px 64px}}
+.about-grid{display:grid;gap:48px;align-items:stretch}
+@media(min-width:768px){.about-grid{grid-template-columns:1fr 2fr}}
+.about-portrait{border-radius:12px;overflow:hidden;min-height:500px}
+.about-portrait img{width:100%;height:100%;object-fit:cover;display:block}
+.about h2{font-size:1.875rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:24px}
+@media(min-width:768px){.about h2{font-size:2.25rem}}
+.about .bio{color:var(--muted);margin-bottom:32px}
+.about-list{list-style:none}
+.about-list li{padding:16px 0;color:var(--muted);border-bottom:1px solid rgba(245,197,24,0.2)}
+.about-list a{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+
+/* ── MEDIA GRID ── */
+.media-grid-2x2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(min-width:768px){.media-grid-2x2{grid-template-columns:1fr 1fr 1fr 1fr}}
+.media-grid-3{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:768px){.media-grid-3{grid-template-columns:1fr 1fr 1fr}}
+.media-item{border-radius:12px;overflow:hidden;aspect-ratio:16/9;position:relative}
+.media-item-vertical{aspect-ratio:9/16}
+@media(min-width:768px){.media-item-vertical{aspect-ratio:unset;height:420px}}
+.media-item-bordered{border:1px solid var(--border)}
+.media-item img,.media-item video{width:100%;height:100%;object-fit:cover}
+.media-item .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 40%)}
+.media-item .media-label{position:absolute;bottom:12px;left:12px;font-size:14px;font-weight:500;color:#fff;z-index:1}
+
+/* ── IDRF CARDS ── */
+.idrf-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.idrf-card-media{aspect-ratio:9/16;overflow:hidden}
+@media(min-width:768px){.idrf-card-media{aspect-ratio:unset;height:420px}}
+.idrf-card-media img,.idrf-card-media video{width:100%;height:100%;object-fit:cover;display:block}
+.idrf-card-label{padding:12px 16px;font-size:14px;color:var(--muted)}
+
+/* ── SECTION SPACING ── */
+.section{padding:40px 24px}
+@media(min-width:768px){.section{padding:40px 64px}}
+@media(min-width:1024px){.section{padding:40px 96px}}
+.section .inner{max-width:1200px;margin:0 auto}
+
+/* ── AUDIENCE CARDS ── */
+.audience-grid{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.audience-grid{grid-template-columns:1fr 1fr 1fr 1fr}}
+.audience-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px}
+.audience-card .header{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.audience-card .big{font-size:2.25rem;font-weight:700;color:var(--gold)}
+.audience-card .med{font-size:1.25rem;font-weight:700}
+.audience-card .sub-label{margin-top:12px;margin-bottom:6px}
+.tags-row{display:flex;flex-wrap:wrap;gap:8px}
+
+/* ── COLLAB CARDS ── */
+.collab-grid{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:768px){.collab-grid{grid-template-columns:1fr 1fr 1fr}}
+.collab-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px}
+.collab-icon{width:40px;height:40px;border-radius:8px;background:var(--bg);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.collab-card h3{color:#fff;font-size:18px;font-weight:600;margin-bottom:12px}
+.collab-card .text{color:var(--muted);font-size:14px;line-height:1.6;margin-bottom:16px}
+
+/* ── CTA ── */
+.cta{padding:48px 24px;text-align:center}
+@media(min-width:768px){.cta{padding:48px 64px}}
+.cta h2{font-size:1.875rem;font-weight:700;line-height:1.3;margin-bottom:16px}
+@media(min-width:768px){.cta h2{font-size:2.5rem}}
+.cta .buttons{display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:40px}
+@media(min-width:640px){.cta .buttons{flex-direction:row;justify-content:center}}
+.btn-email{display:inline-flex;align-items:center;gap:8px;background:var(--card);border:1px solid rgba(255,255,255,0.3);color:#fff;font-weight:600;padding:12px 28px;border-radius:9999px;font-size:15px;transition:background 0.2s}
+.btn-email:hover{background:rgba(255,255,255,0.1)}
+.social-row{display:flex;align-items:center;justify-content:center;gap:16px}
+.social-icon{width:40px;height:40px;border-radius:8px;background:var(--card);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:color 0.2s}
+.social-icon:hover{color:var(--gold)}
+.social-icon svg{width:18px;height:18px}
+
+/* ── LEAD FORM ── */
+.lead-form{background:var(--card);border:1px solid rgba(245,197,24,0.2);border-radius:16px;padding:40px 32px;margin:48px auto 0;max-width:560px;text-align:left}
+.lead-form h3{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:8px}
+.lead-form .form-subtitle{color:var(--muted);font-size:14px;margin-bottom:28px}
+.form-row{display:grid;gap:16px;margin-bottom:16px}
+@media(min-width:480px){.form-row.two-col{grid-template-columns:1fr 1fr}}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.form-group input,.form-group textarea{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:8px;padding:12px 16px;color:#fff;font-family:var(--sans);font-size:14px;outline:none;transition:border-color 0.2s;width:100%}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(160,160,160,0.5)}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group textarea{resize:vertical;min-height:96px}
+.btn-submit{width:100%;background:var(--gold);color:#000;font-weight:700;font-size:15px;padding:14px 28px;border-radius:9999px;border:none;cursor:pointer;font-family:var(--sans);transition:filter 0.2s;margin-top:8px}
+.btn-submit:hover{filter:brightness(1.1)}
+.btn-submit:disabled{opacity:0.6;cursor:not-allowed}
+.form-success{display:none;text-align:center;padding:24px 0}
+.form-success .check{width:48px;height:48px;border-radius:50%;background:rgba(34,197,94,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;color:var(--green)}
+.form-success p{color:#fff;font-weight:600;margin-bottom:8px}
+.form-success span{color:var(--muted);font-size:14px}
+.form-error{display:none;color:#f87171;font-size:13px;margin-top:8px;text-align:center}
+
+/* ── FOOTER ── */
+.footer{padding:24px;border-top:1px solid rgba(245,197,24,0.3)}
+@media(min-width:768px){.footer{padding:24px 64px}}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+.footer-inner span{font-size:14px}
+
+/* ── SKOOL ── */
+.skool-wrap{background:linear-gradient(135deg,#1a1a1a 0%,#141414 100%);border:1px solid rgba(245,197,24,0.15);border-radius:20px;padding:40px;overflow:hidden;position:relative}
+.skool-wrap::before{content:'';position:absolute;top:-60px;right:-60px;width:240px;height:240px;background:radial-gradient(circle,rgba(245,197,24,0.08) 0%,transparent 70%);pointer-events:none}
+.skool-header{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:32px}
+.skool-features{display:grid;grid-template-columns:1fr;gap:16px;margin:28px 0}
+@media(min-width:640px){.skool-features{grid-template-columns:1fr 1fr 1fr}}
+.skool-feature{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:12px;padding:20px}
+.skool-feature-icon{width:36px;height:36px;border-radius:8px;background:rgba(245,197,24,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:var(--gold)}
+.skool-feature h4{font-size:15px;font-weight:600;color:#fff;margin-bottom:8px}
+.skool-feature p{font-size:13px;color:var(--muted);line-height:1.5}
+.btn-skool{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#000;font-weight:700;padding:13px 28px;border-radius:9999px;font-size:15px;transition:filter 0.2s;white-space:nowrap}
+.btn-skool:hover{filter:brightness(1.1)}
+
+/* ── LOVABLE ── */
+[data-lovable-badge],#lovable-badge{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- Containers filled by JS from data.json -->
+<section class="carousel-wrap">
+  <div class="carousel-track" id="carouselTrack"></div>
+</section>
+
+<section class="hero fade-section" id="heroSection"></section>
+<section class="stats-bar fade-section" id="statsBar"></section>
+<section class="about fade-section" id="aboutSection"></section>
+<section class="section fade-section" id="appearancesSection"></section>
+<section class="section fade-section" id="audienceSection"></section>
+<section class="section fade-section" id="idrfSection"></section>
+<section class="section fade-section" id="skoolSection"></section>
+<section class="section fade-section" id="collabSection"></section>
+<section class="fade-section" id="speakingVideosSection"></section>
+<section class="cta fade-section" id="ctaSection"></section>
+<footer class="footer" id="footerSection"></footer>
+
+<script>
+const ASSET_BASE = "https://yury-ai.lovable.app/assets/";
+
+const ICONS = {
+  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
+  tiktok: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.86 2.86 0 0 1 .87.13V9.01a6.31 6.31 0 0 0-.87-.06 6.34 6.34 0 0 0 0 12.68 6.34 6.34 0 0 0 6.34-6.34V9.06a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.49z"/></svg>',
+  linkedin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>',
+  website: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>',
+  youtube: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>',
+  telegram: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>',
+  vk: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.587-1.496c.597-.19 1.365 1.26 2.179 1.815.615.422 1.082.33 1.082.33l2.17-.03s1.136-.07.597-1.003c-.044-.073-.314-.66-1.614-1.868-1.362-1.262-1.18-1.057.46-3.239.999-1.329 1.398-2.142 1.273-2.49-.12-.332-.854-.244-.854-.244l-2.44.015s-.181-.025-.315.056c-.132.079-.216.264-.216.264s-.387 1.028-.903 1.903c-1.088 1.848-1.52 1.946-1.698 1.83-.413-.267-.31-1.075-.31-1.648 0-1.793.272-2.54-.529-2.733-.265-.064-.46-.106-1.138-.113-.87-.009-1.605.003-2.02.206-.277.135-.49.437-.36.453.161.02.525.098.719.36.249.341.24 1.107.24 1.107s.143 2.11-.333 2.372c-.327.179-.776-.187-1.739-1.86-.494-.855-.869-1.801-.869-1.801s-.072-.178-.202-.274a.996.996 0 0 0-.378-.143l-2.32.015s-.348.01-.476.161C4.01 8.187 4.108 8.5 4.108 8.5s1.816 4.25 3.872 6.391c1.886 1.965 4.026 1.836 4.026 1.836l1.779-.013z"/></svg>',
+  monitor: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+  user: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>',
+  document: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>'
+};
+
+fetch('data.json').then(r => r.json()).then(D => {
+  document.title = D.meta.title;
+
+  // ── CAROUSEL ──
+  const doubled = [...D.carousel, ...D.carousel];
+  const track = document.getElementById('carouselTrack');
+  doubled.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'carousel-card';
+    const wrap = document.createElement('div');
+    wrap.className = 'media-wrap';
+    let media;
+    if (item.type === 'image') {
+      media = document.createElement('img');
+      media.src = item.src.startsWith('http') ? item.src : ASSET_BASE + item.src;
+      media.alt = item.caption;
+      media.loading = 'lazy';
+    } else {
+      media = document.createElement('video');
+      media.src = item.src.startsWith('http') ? item.src : ASSET_BASE + item.src;
+      media.autoplay = true; media.muted = true; media.loop = true; media.playsInline = true;
+    }
+    wrap.appendChild(media);
+    const caption = document.createElement('p');
+    caption.className = 'caption';
+    caption.textContent = item.caption;
+    card.appendChild(wrap);
+    card.appendChild(caption);
+    track.appendChild(card);
+  });
+
+  // ── HERO ──
+  document.getElementById('heroSection').innerHTML = `
+    <div style="max-width:900px">
+      <div class="label-row">
+        <span class="line"></span>
+        <span class="label" style="color:var(--gold)">Медиакит · ${D.meta.year}</span>
+        <span class="line"></span>
+      </div>
+      <h1 class="serif"><span>${D.hero.firstName}</span><br><span class="gold">${D.hero.lastName}</span></h1>
+      <p class="subtitle">${D.hero.role} <a href="${D.hero.companyUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);text-decoration:underline;text-underline-offset:2px">${D.hero.company}</a></p>
+      <p class="desc">${D.hero.description}</p>
+      <div class="pills">${D.hero.pills.map(p => `<span class="pill">${p}</span>`).join('')}</div>
+      <div class="buttons">
+        <a href="${D.hero.calendarUrl}" target="_blank" rel="noopener noreferrer" class="btn-gold">Записаться на звонок →</a>
+        <a href="#audience" class="btn-outline">Смотреть статистику ↓</a>
+      </div>
+    </div>`;
+
+  // ── STATS BAR ──
+  const statsIconMap = { instagram: ICONS.instagram, tiktok: ICONS.tiktok, linkedin: ICONS.linkedin, youtube: ICONS.youtube, telegram: ICONS.telegram };
+  document.getElementById('statsBar').innerHTML = `
+    <div class="stats-row">
+      ${D.stats.map(s => {
+        const tag = s.url ? 'a' : 'div';
+        const href = s.url ? ` href="${s.url}" target="_blank" rel="noopener noreferrer"` : '';
+        const icon = statsIconMap[s.platform] ? `<div class="stat-icon" style="color:#a0a0a0">${statsIconMap[s.platform]}</div>` : '';
+        const sub = s.subtitle ? `<div style="font-size:12px;color:var(--muted);line-height:1.3">${s.subtitle}</div>` : '';
+        return `<${tag}${href} class="stat-block">${icon}<div class="stat-text"><div class="stat-label">${s.label}</div><div class="stat-value">${s.value}</div>${sub}</div></${tag}>`;
+      }).join('')}
+    </div>`;
+
+  // ── ABOUT ──
+  document.getElementById('aboutSection').setAttribute('id', 'about');
+  document.getElementById('about').innerHTML = `
+    <div class="about-grid" style="max-width:1200px;margin:0 auto">
+      <div class="about-portrait"><img src="${D.about.portraitUrl}" alt="Юрий Шишкин" style="object-position:top center"></div>
+      <div>
+        <p class="label" style="margin-bottom:16px">${D.about.sectionLabel}</p>
+        <h2 class="serif">${D.about.heading}</h2>
+        <p class="bio">${D.about.bio}</p>
+        <ul class="about-list">${D.about.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
+        <div style="margin-top:32px"><span class="pill" style="color:var(--muted)">📍 ${D.about.location}</span></div>
+      </div>
+    </div>`;
+
+  // ── APPEARANCES ──
+  document.getElementById('appearancesSection').innerHTML = `
+    <div class="inner">
+      <p class="label" style="margin-bottom:16px">${D.appearances.sectionLabel}</p>
+      <p class="muted" style="max-width:800px;margin-bottom:32px">${D.appearances.description}</p>
+      <div class="media-grid-2x2">
+        ${D.appearances.media.map(m => {
+          const el = m.type === 'image'
+            ? `<img src="${m.src}" alt="${m.alt || ''}">`
+            : `<video src="${m.src}" autoplay muted loop playsinline></video>`;
+          return `<div class="media-item media-item-vertical media-item-bordered">${el}</div>`;
+        }).join('')}
+      </div>
+    </div>`;
+
+  // ── AUDIENCE ──
+  document.getElementById('audienceSection').setAttribute('id', 'audience');
+  const audienceIconMap = { instagram: ICONS.instagram, tiktok: ICONS.tiktok, linkedin: ICONS.linkedin, youtube: ICONS.youtube, telegram: ICONS.telegram };
+  document.getElementById('audience').innerHTML = `
+    <div class="inner">
+      <div class="audience-grid">
+        ${D.audience.map(a => {
+          const icon = audienceIconMap[a.platform] || '';
+          const m1Class = a.metric1.class === 'gold' ? 'gold med' : (a.metric1.class === 'green' ? 'green med' : 'med');
+          const m2Class = a.metric2.class === 'green' ? 'green' : '';
+          const m2Style = m2Class ? `class="${m2Class}" style="font-size:1.5rem;font-weight:700"` : 'style="font-size:1.25rem;font-weight:700"';
+
+          let extra = '';
+          if (a.topAges) extra += `<p class="label sub-label">Возраст</p><div class="tags-row" style="margin-bottom:20px">${a.topAges.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
+          if (a.topLocations) extra += `<p class="label sub-label">${a.topAges ? 'Топ стран' : 'Топ локаций'}</p><div class="tags-row">${a.topLocations.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
+          if (a.topCategories) extra += `<p class="label sub-label">Топ категорий</p><div class="tags-row">${a.topCategories.map(t => `<span class="tag">${t}</span>`).join('')}</div>`;
+
+          return `<div class="audience-card">
+            <div class="header"><span style="color:var(--gold)">${icon}</span><span class="label">${a.label}</span></div>
+            <p class="big">${a.followers}</p>
+            <p class="muted" style="font-size:14px;margin-bottom:16px">Подписчиков</p>
+            <p class="${m1Class}">${a.metric1.value}</p>
+            <p class="muted" style="font-size:14px;margin-bottom:16px">${a.metric1.label}</p>
+            <p ${m2Style}>${a.metric2.value}</p>
+            <p class="muted" style="font-size:14px;margin-bottom:20px">${a.metric2.label}</p>
+            ${extra}
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`;
+
+  // ── IDRF ──
+  document.getElementById('idrfSection').innerHTML = `
+    <div class="inner">
+      <p class="label" style="margin-bottom:16px">Сообщество IDRF</p>
+      <h2 class="serif" style="font-size:1.875rem;font-weight:700;margin-bottom:16px">${D.idrf.heading}</h2>
+      <p class="muted" style="max-width:800px;margin-bottom:24px">${D.idrf.description}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px">${D.idrf.pills.map(p => `<span class="pill">${p}</span>`).join('')}</div>
+      <div class="media-grid-3" style="margin-bottom:24px">
+        ${D.idrf.media.map(m => {
+          const el = m.type === 'image'
+            ? `<img src="${m.src}" alt="${m.label}">`
+            : `<video src="${m.src}" autoplay muted loop playsinline></video>`;
+          return `<div class="idrf-card"><div class="idrf-card-media">${el}</div><p class="idrf-card-label">${m.label}</p></div>`;
+        }).join('')}
+      </div>
+      <img src="${D.idrf.bannerUrl}" alt="IDRF stats" style="width:100%;border-radius:12px;margin-bottom:24px">
+      <p style="text-align:center;color:var(--muted);font-size:14px;margin-bottom:16px">${D.idrf.cities}</p>
+      <p style="text-align:center"><a href="${D.idrf.joinUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:600">Вступить в IDRF →</a></p>
+    </div>`;
+
+  // ── SKOOL ──
+  if (D.skool) {
+    const sk = D.skool;
+    const featureIconMap = {
+      play: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`,
+      chat: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
+      qa:   `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`
+    };
+    const membersHtml = sk.members
+      ? `<div style="text-align:center;margin-bottom:8px"><span style="font-size:2rem;font-weight:700;color:var(--gold)">${sk.members}</span><p class="muted" style="font-size:13px">Участников</p></div>`
+      : '';
+    document.getElementById('skoolSection').innerHTML = `
+      <div class="inner">
+        <p class="label" style="margin-bottom:16px">${sk.sectionLabel}</p>
+        <div class="skool-wrap">
+          <div class="skool-header">
+            <div style="max-width:600px">
+              <h2 class="serif" style="font-size:1.875rem;font-weight:700;margin-bottom:12px">${sk.heading}</h2>
+              <p class="muted" style="font-size:15px;line-height:1.7;margin-bottom:20px">${sk.description}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:10px">${sk.pills.map(p => `<span class="pill">${p}</span>`).join('')}</div>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:12px;padding-top:4px">
+              ${membersHtml}
+              <a href="${sk.joinUrl}" target="_blank" rel="noopener noreferrer" class="btn-skool">Вступить →</a>
+            </div>
+          </div>
+          <div class="skool-features">
+            ${sk.features.map(f => `
+              <div class="skool-feature">
+                <div class="skool-feature-icon">${featureIconMap[f.icon] || ''}</div>
+                <h4>${f.title}</h4>
+                <p>${f.text}</p>
+              </div>`).join('')}
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // ── SPEAKING VIDEOS ──
+  if (D.speakingVideos && D.speakingVideos.length) {
+    const spDoubled = [...D.speakingVideos, ...D.speakingVideos];
+    const spCards = spDoubled.map(v => {
+      const src = v.src.startsWith('http') ? v.src : ASSET_BASE + v.src;
+      const media = v.type === 'image'
+        ? `<img src="${src}" alt="${v.caption}" loading="lazy">`
+        : `<video src="${src}" autoplay muted loop playsinline></video>`;
+      return `<div class="carousel-card"><div class="media-wrap">${media}</div><p class="caption">${v.caption}</p></div>`;
+    }).join('');
+    document.getElementById('speakingVideosSection').innerHTML = `
+      <p class="label" style="padding:40px 24px 24px;display:block">Выступления</p>
+      <div class="carousel-wrap" style="padding:0 0 40px">
+        <div class="carousel-track">${spCards}</div>
+      </div>`;
+  }
+
+  // ── COLLABORATION ──
+  document.getElementById('collabSection').innerHTML = `
+    <div class="inner">
+      <p class="label" style="margin-bottom:32px">Форматы сотрудничества</p>
+      <div class="collab-grid">
+        ${D.collaboration.map(c => `
+          <div class="collab-card">
+            <div class="collab-icon">${ICONS[c.icon] || ''}</div>
+            <h3>${c.title}</h3>
+            <p class="text">${c.text}</p>
+            <p style="font-size:14px" class="${c.footnoteColor === 'gold' ? 'gold' : 'muted'}">${c.footnote}</p>
+          </div>`).join('')}
+      </div>
+    </div>`;
+
+  // ── CTA ──
+  document.getElementById('ctaSection').innerHTML = `
+    <div style="max-width:640px;margin:0 auto">
+      <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:24px">
+        <span style="width:40px;height:1px;background:var(--gold)"></span>
+        <span class="label" style="color:var(--gold)">Давайте сотрудничать</span>
+        <span style="width:40px;height:1px;background:var(--gold)"></span>
+      </div>
+      <h2 class="serif">${D.cta.heading}</h2>
+      <p class="muted" style="margin-bottom:24px">${D.cta.subtext}</p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:32px">
+        <span style="width:10px;height:10px;border-radius:50%;background:var(--green);display:inline-block"></span>
+        <span class="muted" style="font-size:14px">${D.cta.availability}</span>
+      </div>
+      <div class="buttons">
+        <a href="mailto:${D.cta.email}" class="btn-email">✉ ${D.cta.email}</a>
+        <a href="${D.cta.calendarUrl}" target="_blank" rel="noopener noreferrer" class="btn-gold">Записаться на звонок →</a>
+      </div>
+
+      <div class="lead-form" id="leadFormWrap">
+        <h3>Написать</h3>
+        <p class="form-subtitle">Расскажите о вашем бренде и каком формате партнёрства вы думаете.</p>
+        <form id="leadForm" novalidate>
+          <div class="form-row two-col">
+            <div class="form-group">
+              <label>Имя</label>
+              <input type="text" name="firstname" placeholder="Иван" required>
+            </div>
+            <div class="form-group">
+              <label>Фамилия</label>
+              <input type="text" name="lastname" placeholder="Иванов">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" name="email" placeholder="you@company.com" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Компания</label>
+              <input type="text" name="company" placeholder="Ваш бренд или агентство">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Сообщение</label>
+              <textarea name="message" placeholder="Расскажите о вашем продукте и желаемом формате сотрудничества…"></textarea>
+            </div>
+          </div>
+          <p class="form-error" id="formError">Заполните обязательные поля.</p>
+          <button type="submit" class="btn-submit" id="formSubmit">Отправить →</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="check"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <p>Получено!</p>
+          <span>Отвечу в течение 24 часов.</span>
+        </div>
+      </div>
+
+      <div class="social-row" style="margin-top:48px">
+        ${D.social.map(s => `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="social-icon">${ICONS[s.platform] || ''}</a>`).join('')}
+      </div>
+    </div>`;
+
+  // ── HUBSPOT FORM SUBMIT ──
+  const HS_PORTAL = '26088763';
+  const HS_FORM   = 'f6d5a122-88ee-4f4a-a629-cf14cf933d35';
+
+  document.getElementById('leadForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value.trim();
+    const errEl = document.getElementById('formError');
+    errEl.style.display = 'none';
+    if (!email) { errEl.style.display = 'block'; return; }
+
+    const btn = document.getElementById('formSubmit');
+    btn.disabled = true;
+    btn.textContent = 'Отправка…';
+
+    const fields = [
+      { name: 'firstname', value: form.firstname.value.trim() },
+      { name: 'lastname',  value: form.lastname.value.trim() },
+      { name: 'email',     value: email },
+      { name: 'company',   value: form.company.value.trim() },
+      { name: 'message',   value: form.message.value.trim() },
+    ].filter(f => f.value);
+
+    try {
+      const res = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HS_PORTAL}/${HS_FORM}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            fields,
+            context: { pageUri: window.location.href, pageName: document.title }
+          })
+        }
+      );
+      if (res.ok) {
+        form.style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        throw new Error('Server error');
+      }
+    } catch(err) {
+      btn.disabled = false;
+      btn.textContent = 'Отправить →';
+      errEl.textContent = 'Что-то пошло не так. Попробуйте ещё раз или напишите на email.';
+      errEl.style.display = 'block';
+    }
+  });
+
+  // ── FOOTER ──
+  document.getElementById('footerSection').innerHTML = `
+    <div class="footer-inner">
+      <span style="color:#fff">${D.hero.firstName} ${D.hero.lastName}</span>
+      <span class="muted">© ${D.meta.year} · ${D.hero.company} · Медиакит</span>
+    </div>`;
+
+  // ── FORCE VIDEO AUTOPLAY (Safari fix) ──
+  document.querySelectorAll('video').forEach(v => {
+    v.muted = true;
+    const tryPlay = () => v.play().catch(() => {});
+    if (v.readyState >= 2) { tryPlay(); }
+    else { v.addEventListener('loadeddata', tryPlay, { once: true }); }
+  });
+
+  // ── FADE IN ──
+  const sections = document.querySelectorAll('.fade-section');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  sections.forEach(s => obs.observe(s));
+});
+</script>
+</body>
+</html>

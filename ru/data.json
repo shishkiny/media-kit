@@ -1,0 +1,374 @@
+{
+  "meta": {
+    "title": "Юрий Шишкин — Медиакит",
+    "year": 2026
+  },
+  "hero": {
+    "firstName": "Юрий",
+    "lastName": "Шишкин",
+    "role": "Фаундер и CEO",
+    "company": "24.online",
+    "companyUrl": "https://24.online/",
+    "description": "Эксперт в eCommerce и AI. 18 лет строю технологические компании, которые меняют то, как бренды продают онлайн.",
+    "pills": [
+      "Stanford GSB Alumni",
+      "194K+ сообщество",
+      "P&G · MARS · LG"
+    ],
+    "calendarUrl": "https://calendar.app.google/GUbx3fxJWAq52LJ36"
+  },
+  "stats": [
+    {
+      "platform": "instagram",
+      "label": "Instagram Подписчиков",
+      "value": "194K",
+      "url": "https://instagram.com/yury.ai"
+    },
+    {
+      "platform": "tiktok",
+      "label": "TikTok Подписчиков",
+      "value": "90K",
+      "url": "https://tiktok.com/@yury.ai"
+    },
+    {
+      "platform": "telegram",
+      "label": "Telegram Подписчиков",
+      "value": "—",
+      "url": "https://t.me/aiyury"
+    },
+    {
+      "platform": "youtube",
+      "label": "YouTube Подписчиков",
+      "value": "10K",
+      "url": "https://www.youtube.com/@Yury_AI"
+    },
+    {
+      "platform": "views",
+      "label": "IG просмотров в месяц",
+      "value": "3M"
+    },
+    {
+      "platform": "community",
+      "label": "IDRF Community",
+      "value": "2 000",
+      "subtitle": "топ-экспертов в eRetail"
+    }
+  ],
+  "about": {
+    "sectionLabel": "О фаундере",
+    "heading": "Строю будущее eCommerce — с 2006 года",
+    "bio": "Юрий Шишкин — один из наиболее известных экспертов на стыке искусственного интеллекта и онлайн-ритейла. Имея глубокий операционный опыт в построении eCommerce-компаний, он сочетает практическую экспертизу с реальным thought leadership — говорит как с фаундерами, так и с крупнейшими брендами.",
+    "portraitUrl": "https://yury-ai.lovable.app/assets/yury-shishkin-B7VJNQ-T.jpg",
+    "highlights": [
+      "<span style=\"color:var(--gold);font-weight:700\">18+ лет</span> строю eCommerce-технологии на рынках MENA, LATAM и Азии, сейчас запускаю США",
+      "Основал <a href=\"https://24ttl.net/\" target=\"_blank\" rel=\"noopener noreferrer\">24TTL в 2008 году</a> — вырастил до 8-значного exit",
+      "CEO <a href=\"https://24.online/\" target=\"_blank\" rel=\"noopener noreferrer\">24.online</a> — AI-платформа продуктовой фотографии для онлайн-ритейла",
+      "Основатель <a href=\"https://www.idrf.online/\" target=\"_blank\" rel=\"noopener noreferrer\">IDRF</a> (International Digital Retail Forum)",
+      "<span style=\"color:var(--gold)\">Stanford GSB Alumni</span> — работает с Fortune 500 брендами по всему миру"
+    ],
+    "location": "Дубай, ОАЭ"
+  },
+  "appearances": {
+    "sectionLabel": "Недавние выступления",
+    "description": "Worlddef Dubai 2026 · Masterclass Stage — панельная дискуссия «No Ads, No Growth: реальность 2026 для Amazon и eCommerce» с Amazon Sellers Society",
+    "media": [
+      {
+        "type": "image",
+        "src": "https://yury-ai.lovable.app/assets/worlddef-panel-DuOmvle4.jpg",
+        "alt": "Worlddef panel"
+      },
+      {
+        "type": "video",
+        "src": "https://yury-ai.lovable.app/assets/worlddef-video-B6uzsNPx.mp4"
+      },
+      {
+        "type": "image",
+        "src": "https://yury-ai.lovable.app/assets/worlddef-selfie-CPw-Fqgr.jpg",
+        "alt": "Worlddef selfie"
+      },
+      {
+        "type": "video",
+        "src": "https://yury-ai.lovable.app/assets/worlddef-video2-fFTpbKBr.mp4"
+      }
+    ]
+  },
+  "audience": [
+    {
+      "platform": "instagram",
+      "label": "Instagram Аудитория",
+      "followers": "194K",
+      "metric1": {
+        "value": "3M",
+        "label": "Просмотров за 30 дней",
+        "class": "gold"
+      },
+      "metric2": {
+        "value": "715K",
+        "label": "Уникальных аккаунтов охвачено за 30 дней"
+      },
+      "topAges": [
+        "25–34 лет",
+        "35–44 лет"
+      ],
+      "topLocations": [
+        "Индия",
+        "США",
+        "Германия"
+      ]
+    },
+    {
+      "platform": "tiktok",
+      "label": "TikTok Аудитория",
+      "followers": "90K",
+      "metric1": {
+        "value": "378K",
+        "label": "Зрителей за 28 дней",
+        "class": "gold"
+      },
+      "metric2": {
+        "value": "+49.5%",
+        "label": "Рост аудитории (28 дней)",
+        "class": "green"
+      },
+      "topCategories": [
+        "eCommerce",
+        "AI Tools",
+        "Tech"
+      ]
+    },
+    {
+      "platform": "youtube",
+      "label": "YouTube Аудитория",
+      "followers": "10K",
+      "metric1": {
+        "value": "589K",
+        "label": "Просмотров за 28 дней",
+        "class": "gold"
+      },
+      "metric2": {
+        "value": "+3.5K",
+        "label": "Новых подписчиков (28 дней)",
+        "class": "green"
+      },
+      "topAges": [
+        "25–34 лет",
+        "35–44 лет"
+      ],
+      "topLocations": [
+        "США",
+        "Индия",
+        "Германия"
+      ]
+    },
+    {
+      "platform": "telegram",
+      "label": "Telegram Аудитория",
+      "followers": "—",
+      "metric1": {
+        "value": "@aiyury",
+        "label": "Канал в Telegram",
+        "class": "gold"
+      },
+      "metric2": {
+        "value": "eCommerce · AI",
+        "label": "Темы канала"
+      },
+      "topLocations": [
+        "Россия",
+        "СНГ",
+        "Дубай"
+      ]
+    }
+  ],
+  "idrf": {
+    "heading": "Глобальное сообщество лидеров eCommerce",
+    "description": "Юрий основал IDRF — International Digital Retail Forum — в 2019 году. Сегодня это глобальное сообщество из 2 000+ экспертов в онлайн-ритейле, бренд-менеджеров и e-retailers из таких компаний, как Nestlé, LG, Coca-Cola, L'Oréal, Samsung, NVIDIA, Danone, MARS и 50+ других крупных брендов.",
+    "pills": [
+      "С 2019 года",
+      "2 000+ участников",
+      "50+ Enterprise брендов"
+    ],
+    "media": [
+      {
+        "type": "video",
+        "src": "https://yury-ai.lovable.app/assets/idrf-awards-yLQaNhpX.mp4",
+        "label": "Церемония IDRF Awards"
+      },
+      {
+        "type": "image",
+        "src": "https://yury-ai.lovable.app/assets/crop-idrf-stage-binh7o8w.jpg",
+        "label": "IDRF · International Digital Retail Forum"
+      },
+      {
+        "type": "video",
+        "src": "https://yury-ai.lovable.app/assets/idrf-fmcg-panel-CGuLMP0t.mp4",
+        "label": "IDRF · FMCG & AI Панель"
+      }
+    ],
+    "bannerUrl": "https://yury-ai.lovable.app/assets/idrf-stats-banner-lMgQ_X-e.png",
+    "cities": "🇦🇪 Дубай · 🇲🇽 Мехико · 🇮🇩 Джакарта · 🇰🇿 Алматы · 🇰🇷 Сеул · 🇬🇧 Лондон",
+    "joinUrl": "https://idrf.online"
+  },
+  "skool": {
+    "sectionLabel": "Сообщество",
+    "heading": "Yury.ai — AI-инструменты для реального бизнеса",
+    "description": "Сообщество для фаундеров, бренд-менеджеров и eCommerce-операторов, которые хотят применять AI-инструменты на практике — а не в теории. Уроки, живые Q&A-сессии и экспертные чаты — всё в одном месте.",
+    "pills": [
+      "AI-инструменты",
+      "eCommerce",
+      "Уроки + Q&A"
+    ],
+    "features": [
+      { "icon": "play", "title": "Уроки", "text": "Пошаговые гайды по применению AI-инструментов в реальных бизнес-задачах." },
+      { "icon": "chat", "title": "Чаты сообщества", "text": "Тематические каналы, где практики делятся тем, что реально работает." },
+      { "icon": "qa",   "title": "Live Q&A", "text": "Регулярные Q&A-сессии с Юрием и приглашёнными экспертами." }
+    ],
+    "joinUrl": "https://skool.com/yury-ai",
+    "members": null
+  },
+  "collaboration": [
+    {
+      "icon": "monitor",
+      "title": "Спонсорский контент",
+      "text": "Instagram Reels, карусели и сторис · TikTok · Telegram · ВКонтакте · посты в eCommerce-сообществе — ваш продукт внутри аутентичного, story-driven контента.",
+      "footnote": "avg. 15K+ охвата на пост",
+      "footnoteColor": "gold"
+    },
+    {
+      "icon": "user",
+      "title": "Спикерство и события",
+      "text": "Keynote, панели и вебинары с прямым доступом к топ-менеджерам в eCommerce и ритейле.",
+      "footnote": "IDRF · Seamless · Shoptalk · ивенты под ключ",
+      "footnoteColor": "muted"
+    },
+    {
+      "icon": "document",
+      "title": "Стратегические партнёрства",
+      "text": "SaaS-интеграции, спонсорство рассылок и advisory — отношения, которые дают реальный бизнес-результат.",
+      "footnote": "кейсы · advisory",
+      "footnoteColor": "muted"
+    }
+  ],
+  "cta": {
+    "heading": "Умные бренды заслуживают<br>глубокого сотрудничества.",
+    "subtext": "Слоты для партнёрств ограничены. Давайте поговорим.",
+    "availability": "Открыт для партнёрств в Q2 2026",
+    "email": "yury@24.online",
+    "calendarUrl": "https://calendar.app.google/GUbx3fxJWAq52LJ36"
+  },
+  "social": [
+    {
+      "platform": "telegram",
+      "url": "https://t.me/aiyury"
+    },
+    {
+      "platform": "instagram",
+      "url": "https://instagram.com/yury.ai"
+    },
+    {
+      "platform": "tiktok",
+      "url": "https://tiktok.com/@yury.ai"
+    },
+    {
+      "platform": "youtube",
+      "url": "https://www.youtube.com/@Yury_AI"
+    },
+    {
+      "platform": "vk",
+      "url": "#"
+    },
+    {
+      "platform": "website",
+      "url": "https://24.online"
+    }
+  ],
+  "carousel": [
+    {
+      "type": "video",
+      "src": "https://yury.24.online/clips/img_7359.mp4",
+      "caption": "206K просмотров"
+    },
+    {
+      "type": "video",
+      "src": "https://yury.24.online/clips/img_7361.mp4",
+      "caption": "119K просмотров"
+    },
+    {
+      "type": "video",
+      "src": "https://yury.24.online/clips/img_7362.mp4",
+      "caption": "490K просмотров"
+    },
+    {
+      "type": "video",
+      "src": "https://yury.24.online/clips/img_7363.mp4",
+      "caption": "220K просмотров"
+    },
+    {
+      "type": "video",
+      "src": "https://yury.24.online/clips/img_7364.mp4",
+      "caption": "88K просмотров"
+    },
+    {
+      "type": "video",
+      "src": "https://yury.24.online/clips/img_7365.mp4",
+      "caption": "523K просмотров"
+    },
+    {
+      "type": "video",
+      "src": "https://yury.24.online/clips/img_7366.mp4",
+      "caption": "664K просмотров"
+    },
+    {
+      "type": "video",
+      "src": "https://yury.24.online/clips/img_7367.mp4",
+      "caption": "666K просмотров"
+    },
+    {
+      "type": "video",
+      "src": "https://yury.24.online/clips/img_7737.mp4",
+      "caption": "1.3M просмотров"
+    },
+    {
+      "type": "video",
+      "src": "https://yury.24.online/clips/691.mp4",
+      "caption": "39.7K просмотров"
+    }
+  ],
+  "speakingVideos": [
+    {
+      "type": "video",
+      "src": "gsb-clip-CPwHtUvu.mp4",
+      "caption": "Stanford GSB · Alumni"
+    },
+    {
+      "type": "video",
+      "src": "gsb-alumni-Bi1TRZiI.mp4",
+      "caption": "Dubai AI Week 2025 · Museum of the Future"
+    },
+    {
+      "type": "video",
+      "src": "irce-chicago-B9y9IMMU.mp4",
+      "caption": "IRCE 2019 · Чикаго"
+    },
+    {
+      "type": "image",
+      "src": "idfr-stage-CLs0bnmU.jpg",
+      "caption": "IDRF · Новое поколение eCommerce"
+    },
+    {
+      "type": "image",
+      "src": "ibm-CpNEQikQ.jpg",
+      "caption": "IBM · Google for Entrepreneurs · DMCC"
+    },
+    {
+      "type": "image",
+      "src": "gsb100-D9VwFVYN.jpg",
+      "caption": "Stanford GSB · #GSB100 Centennial"
+    },
+    {
+      "type": "image",
+      "src": "speaking-B9mujfnj.webp",
+      "caption": "Keynote · рынок eCommerce"
+    }
+  ]
+}
