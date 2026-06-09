@@ -191,9 +191,9 @@ img,video{display:block;max-width:100%}
 .btn-skool:hover{filter:brightness(1.1)}
 
 /* ── SPIEF ── */
-.spief-wrap{background:linear-gradient(135deg,#0f1629 0%,#0d1120 100%);border:1px solid rgba(100,140,255,0.2);border-radius:20px;overflow:hidden}
-.spief-header{padding:40px 40px 32px;border-bottom:1px solid rgba(100,140,255,0.12)}
-.spief-event-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(100,140,255,0.12);border:1px solid rgba(100,140,255,0.25);border-radius:9999px;padding:6px 16px;font-size:13px;color:rgba(150,180,255,0.9);margin-bottom:20px}
+.spief-wrap{background:linear-gradient(135deg,#1a1a1a 0%,#141414 100%);border:1px solid rgba(245,197,24,0.15);border-radius:20px;overflow:hidden}
+.spief-header{padding:40px 40px 32px;border-bottom:1px solid rgba(245,197,24,0.1)}
+.spief-event-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(245,197,24,0.08);border:1px solid rgba(245,197,24,0.2);border-radius:9999px;padding:6px 16px;font-size:13px;color:var(--gold);margin-bottom:20px}
 .spief-photos{display:grid;grid-template-columns:1fr 1fr;gap:3px}
 @media(min-width:768px){.spief-photos{grid-template-columns:2fr 1fr 1fr}}
 .spief-photo{aspect-ratio:4/3;overflow:hidden;position:relative}
@@ -201,9 +201,9 @@ img,video{display:block;max-width:100%}
 .spief-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
 .spief-photo:hover img{transform:scale(1.03)}
 .spief-quotes{padding:40px}
-.spief-quote{border-left:3px solid rgba(100,140,255,0.5);padding:16px 20px;margin-bottom:24px;background:rgba(100,140,255,0.05);border-radius:0 8px 8px 0}
+.spief-quote{border-left:3px solid var(--gold);padding:16px 20px;margin-bottom:24px;background:rgba(245,197,24,0.04);border-radius:0 8px 8px 0}
 .spief-quote blockquote{font-size:1.1rem;font-weight:600;color:#fff;line-height:1.5;margin-bottom:8px;font-style:italic}
-.spief-quote cite{font-size:13px;color:rgba(150,180,255,0.7);font-style:normal}
+.spief-quote cite{font-size:13px;color:var(--muted);font-style:normal}
 
 /* ── LOVABLE ── */
 [data-lovable-badge],#lovable-badge{display:none!important}
@@ -341,7 +341,7 @@ fetch('data.json').then(r => r.json()).then(D => {
           <div class="spief-header">
             <div class="spief-event-tag">🎤 ${sp.event}</div>
             <h2 class="serif" style="font-size:1.875rem;font-weight:700;color:#fff;margin-bottom:16px">${sp.heading}</h2>
-            <p style="color:rgba(160,180,220,0.8);font-size:15px;line-height:1.7;max-width:760px;margin-bottom:24px">${sp.article}</p>
+            <p style="color:var(--muted);font-size:15px;line-height:1.7;max-width:760px;margin-bottom:24px">${sp.article}</p>
             <div style="display:flex;flex-wrap:wrap;gap:10px">${sp.pills.map(p => `<span class="pill">${p}</span>`).join('')}</div>
           </div>
           <div class="spief-photos">${photos}</div>
