@@ -190,6 +190,21 @@ img,video{display:block;max-width:100%}
 .btn-skool{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#000;font-weight:700;padding:13px 28px;border-radius:9999px;font-size:15px;transition:filter 0.2s;white-space:nowrap}
 .btn-skool:hover{filter:brightness(1.1)}
 
+/* ── SPIEF ── */
+.spief-wrap{background:linear-gradient(135deg,#0f1629 0%,#0d1120 100%);border:1px solid rgba(100,140,255,0.2);border-radius:20px;overflow:hidden}
+.spief-header{padding:40px 40px 32px;border-bottom:1px solid rgba(100,140,255,0.12)}
+.spief-event-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(100,140,255,0.12);border:1px solid rgba(100,140,255,0.25);border-radius:9999px;padding:6px 16px;font-size:13px;color:rgba(150,180,255,0.9);margin-bottom:20px}
+.spief-photos{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+@media(min-width:768px){.spief-photos{grid-template-columns:2fr 1fr 1fr}}
+.spief-photo{aspect-ratio:4/3;overflow:hidden;position:relative}
+.spief-photo:first-child{aspect-ratio:unset;grid-row:span 2}
+.spief-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.spief-photo:hover img{transform:scale(1.03)}
+.spief-quotes{padding:40px}
+.spief-quote{border-left:3px solid rgba(100,140,255,0.5);padding:16px 20px;margin-bottom:24px;background:rgba(100,140,255,0.05);border-radius:0 8px 8px 0}
+.spief-quote blockquote{font-size:1.1rem;font-weight:600;color:#fff;line-height:1.5;margin-bottom:8px;font-style:italic}
+.spief-quote cite{font-size:13px;color:rgba(150,180,255,0.7);font-style:normal}
+
 /* ── LOVABLE ── */
 [data-lovable-badge],#lovable-badge{display:none!important}
 </style>
@@ -204,6 +219,7 @@ img,video{display:block;max-width:100%}
 <section class="hero fade-section" id="heroSection"></section>
 <section class="stats-bar fade-section" id="statsBar"></section>
 <section class="about fade-section" id="aboutSection"></section>
+<section class="section fade-section" id="spiefSection"></section>
 <section class="section fade-section" id="appearancesSection"></section>
 <section class="section fade-section" id="audienceSection"></section>
 <section class="section fade-section" id="idrfSection"></section>
@@ -304,6 +320,35 @@ fetch('data.json').then(r => r.json()).then(D => {
         <div style="margin-top:32px"><span class="pill" style="color:var(--muted)">📍 ${D.about.location}</span></div>
       </div>
     </div>`;
+
+  // ── SPIEF ──
+  if (D.spief) {
+    const sp = D.spief;
+    const SPIEF_BASE = '../assets/spief/';
+    const photos = sp.media.map((m, i) => {
+      const src = m.src.startsWith('http') ? m.src : SPIEF_BASE + m.src.replace('spief/', '');
+      return `<div class="spief-photo"><img src="${src}" alt="${m.alt}" loading="lazy"></div>`;
+    }).join('');
+    const quotes = sp.quotes.map(q => `
+      <div class="spief-quote">
+        <blockquote>«${q.text}»</blockquote>
+        <cite>${q.context}</cite>
+      </div>`).join('');
+    document.getElementById('spiefSection').innerHTML = `
+      <div class="inner">
+        <p class="label" style="margin-bottom:16px">${sp.sectionLabel}</p>
+        <div class="spief-wrap">
+          <div class="spief-header">
+            <div class="spief-event-tag">🎤 ${sp.event}</div>
+            <h2 class="serif" style="font-size:1.875rem;font-weight:700;color:#fff;margin-bottom:16px">${sp.heading}</h2>
+            <p style="color:rgba(160,180,220,0.8);font-size:15px;line-height:1.7;max-width:760px;margin-bottom:24px">${sp.article}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px">${sp.pills.map(p => `<span class="pill">${p}</span>`).join('')}</div>
+          </div>
+          <div class="spief-photos">${photos}</div>
+          <div class="spief-quotes">${quotes}</div>
+        </div>
+      </div>`;
+  }
 
   // ── APPEARANCES ──
   document.getElementById('appearancesSection').innerHTML = `
