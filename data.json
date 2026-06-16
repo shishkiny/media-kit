@@ -207,7 +207,7 @@
     "collage": [
       { "src": "/assets/idrf/idrf-event-1.jpg", "alt": "IDRF Meetup · Dubai" },
       { "src": "/assets/idrf/idrf-padel.jpg", "alt": "IDRF Padel Games", "objectPosition": "top" },
-      { "src": "/assets/idrf/idrf-event-5.jpg", "alt": "IDRF Awards 2025", "objectPosition": "bottom" }
+      { "src": "/assets/idrf/idrf-event-5.jpg", "alt": "IDRF Awards 2025", "objectPosition": "50% 65%" }
     ],
     "media": [
       {
