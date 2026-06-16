@@ -191,11 +191,9 @@ img,video{display:block;max-width:100%}
 .btn-skool:hover{filter:brightness(1.1)}
 
 /* ── IDRF COLLAGE ── */
-.idrf-collage{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:220px 220px;gap:4px;border-radius:16px;overflow:hidden;margin-bottom:40px}
-@media(max-width:767px){.idrf-collage{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}}
+.idrf-collage{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:280px;gap:4px;border-radius:16px;overflow:hidden;margin-bottom:16px}
+@media(max-width:767px){.idrf-collage{grid-template-columns:1fr;grid-template-rows:220px 220px 220px}}
 .idrf-collage-item{overflow:hidden;position:relative}
-.idrf-collage-item:first-child{grid-row:span 2}
-@media(max-width:767px){.idrf-collage-item:first-child{grid-row:span 1;grid-column:span 2}}
 .idrf-collage-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
 .idrf-collage-item:hover img{transform:scale(1.04)}
 /* ── IDRF FORMATS ── */
@@ -396,7 +394,7 @@ fetch('data.json').then(r => r.json()).then(D => {
       </div>
 
       <div class="idrf-collage">
-        ${D.idrf.collage.map(c => `<div class="idrf-collage-item"><img src="${c.src}" alt="${c.alt}" loading="lazy"></div>`).join('')}
+        ${D.idrf.collage.map(c => `<div class="idrf-collage-item"><img src="${c.src}" alt="${c.alt}" loading="lazy" style="object-position:${c.objectPosition||'center'}"></div>`).join('')}
       </div>
 
       <div class="media-grid-3" style="margin-bottom:24px">
