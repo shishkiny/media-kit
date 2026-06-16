@@ -206,8 +206,8 @@
     "brands": ["P&G", "Samsung", "LG", "Colgate", "Unilever", "Arla", "Kraft Heinz", "Nestlé", "MARS", "Coca-Cola", "L’Oréal", "NVIDIA", "Danone", "Amazon", "Noon"],
     "collage": [
       { "src": "/assets/idrf/idrf-event-1.jpg", "alt": "IDRF Meetup · Dubai" },
-      { "src": "/assets/idrf/idrf-padel.jpg", "alt": "IDRF Padel Games" },
-      { "src": "/assets/idrf/idrf-event-5.jpg", "alt": "IDRF Awards 2025", "objectPosition": "top" }
+      { "src": "/assets/idrf/idrf-padel.jpg", "alt": "IDRF Padel Games", "objectPosition": "top" },
+      { "src": "/assets/idrf/idrf-event-5.jpg", "alt": "IDRF Awards 2025", "objectPosition": "bottom" }
     ],
     "media": [
       {
