@@ -226,7 +226,7 @@ img,video{display:block;max-width:100%}
 <section class="section fade-section" id="appearancesSection"></section>
 <section class="section fade-section" id="audienceSection"></section>
 <section class="section fade-section" id="idrfSection"></section>
-<section class="section fade-section" id="skoolSection"></section>
+<section class="section fade-section" id="skoolSection" style="padding-top:80px"></section>
 <section class="section fade-section" id="collabSection"></section>
 <section class="fade-section" id="speakingVideosSection"></section>
 <section class="cta fade-section" id="ctaSection"></section>
@@ -406,7 +406,9 @@ fetch('data.json').then(r => r.json()).then(D => {
         }).join('')}
       </div>
 
-      <p style="text-align:center"><a href="${D.idrf.joinUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:600">Join IDRF Community →</a></p>
+      <div style="text-align:center;margin-top:32px">
+        <a href="${D.idrf.joinUrl}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#000;font-weight:700;font-size:15px;padding:14px 36px;border-radius:9999px;transition:filter 0.2s" onmouseover="this.style.filter='brightness(1.1)'" onmouseout="this.style.filter='brightness(1)'">Join IDRF Community →</a>
+      </div>
     </div>`;
 
   // ── SKOOL ──
