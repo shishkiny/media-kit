@@ -181,12 +181,35 @@
     }
   ],
   "idrf": {
-    "heading": "Global Community of eCommerce Leaders",
-    "description": "Yury founded IDRF — International Digital Retail Forum — in 2019. Today it’s a global community of 2,000+ online retail experts, brand managers and e-retailers from companies like Nestlé, LG, Coca-Cola, L’Oréal, Samsung, NVIDIA, Danone, MARS and 50+ more enterprise brands.",
+    "heading": "Where eCommerce Leaders Actually Connect",
+    "tagline": "Closed. Invite-only. No fluff.",
+    "description": "IDRF — International Digital Retail Forum — is a closed, invite-only community founded by Yury Shishkin in 2019. Today it unites 2,000+ eCommerce directors, brand managers and online retail leaders from the world’s top consumer brands — brought together not just at conferences, but at padel courts, BBQ nights and city meetups that turn colleagues into allies.",
     "pills": [
       "Since 2019",
       "2,000+ Members",
       "50+ Enterprise Brands"
+    ],
+    "stats": [
+      { "value": "2,000+", "label": "Members" },
+      { "value": "100+",   "label": "Events held" },
+      { "value": "10",     "label": "Conferences" },
+      { "value": "50+",    "label": "Enterprise brands" }
+    ],
+    "formats": [
+      { "emoji": "🎤", "label": "Annual Forum" },
+      { "emoji": "🎾", "label": "Padel Games" },
+      { "emoji": "🔥", "label": "BBQ Nights" },
+      { "emoji": "📍", "label": "City Meetups" },
+      { "emoji": "🥂", "label": "Bar Nights" },
+      { "emoji": "🛠", "label": "Workshops" }
+    ],
+    "brands": ["P&G", "Samsung", "LG", "Colgate", "Unilever", "Arla", "Kraft Heinz", "Nestlé", "MARS", "Coca-Cola", "L’Oréal", "NVIDIA", "Danone", "Amazon", "Noon"],
+    "collage": [
+      { "src": "/assets/idrf/idrf-event-1.jpg", "alt": "IDRF Meetup · Dubai" },
+      { "src": "/assets/idrf/idrf-event-5.jpg", "alt": "IDRF Awards 2025" },
+      { "src": "/assets/idrf/idrf-event-6.jpg", "alt": "IDRF · Jakarta" },
+      { "src": "/assets/idrf/idrf-event-7.jpg", "alt": "IDRF · Mexico" },
+      { "src": "/assets/idrf/idrf-event-2.jpg", "alt": "IDRF Meetup" }
     ],
     "media": [
       {

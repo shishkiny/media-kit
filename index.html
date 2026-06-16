@@ -190,6 +190,27 @@ img,video{display:block;max-width:100%}
 .btn-skool{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#000;font-weight:700;padding:13px 28px;border-radius:9999px;font-size:15px;transition:filter 0.2s;white-space:nowrap}
 .btn-skool:hover{filter:brightness(1.1)}
 
+/* ── IDRF COLLAGE ── */
+.idrf-collage{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:220px 220px;gap:4px;border-radius:16px;overflow:hidden;margin-bottom:40px}
+@media(max-width:767px){.idrf-collage{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px 160px}}
+.idrf-collage-item{overflow:hidden;position:relative}
+.idrf-collage-item:first-child{grid-row:span 2}
+@media(max-width:767px){.idrf-collage-item:first-child{grid-row:span 1;grid-column:span 2}}
+.idrf-collage-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.idrf-collage-item:hover img{transform:scale(1.04)}
+/* ── IDRF FORMATS ── */
+.idrf-formats{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.idrf-format{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:9999px;padding:8px 18px;font-size:14px;color:#fff}
+.idrf-format .fmt-emoji{font-size:18px}
+/* ── IDRF STATS ── */
+.idrf-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:32px 0}
+@media(max-width:640px){.idrf-stats{grid-template-columns:repeat(2,1fr)}}
+.idrf-stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+.idrf-stat .val{font-size:2rem;font-weight:700;color:var(--gold);line-height:1.1}
+.idrf-stat .lbl{font-size:12px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.1em}
+/* ── IDRF BRANDS ── */
+.idrf-brands{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+.idrf-brand{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font-size:13px;color:var(--muted)}
 /* ── LOVABLE ── */
 [data-lovable-badge],#lovable-badge{display:none!important}
 </style>
@@ -353,9 +374,31 @@ fetch('data.json').then(r => r.json()).then(D => {
   document.getElementById('idrfSection').innerHTML = `
     <div class="inner">
       <p class="label" style="margin-bottom:16px">IDRF Community</p>
-      <h2 class="serif" style="font-size:1.875rem;font-weight:700;margin-bottom:16px">${D.idrf.heading}</h2>
-      <p class="muted" style="max-width:800px;margin-bottom:24px">${D.idrf.description}</p>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px">${D.idrf.pills.map(p => `<span class="pill">${p}</span>`).join('')}</div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-bottom:20px">
+        <h2 class="serif" style="font-size:1.875rem;font-weight:700;line-height:1.2">${D.idrf.heading}</h2>
+        <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(245,197,24,0.1);border:1px solid rgba(245,197,24,0.3);border-radius:9999px;padding:5px 14px;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);white-space:nowrap">🔒 ${D.idrf.tagline}</span>
+      </div>
+
+      <p class="muted" style="max-width:820px;margin-bottom:8px;font-size:15px;line-height:1.7">${D.idrf.description}</p>
+
+      <div class="idrf-formats">
+        ${D.idrf.formats.map(f => `<div class="idrf-format"><span class="fmt-emoji">${f.emoji}</span>${f.label}</div>`).join('')}
+      </div>
+
+      <div class="idrf-stats">
+        ${D.idrf.stats.map(s => `<div class="idrf-stat"><div class="val">${s.value}</div><div class="lbl">${s.label}</div></div>`).join('')}
+      </div>
+
+      <p class="label" style="margin-bottom:12px">Members include</p>
+      <div class="idrf-brands">
+        ${D.idrf.brands.map(b => `<span class="idrf-brand">${b}</span>`).join('')}
+      </div>
+
+      <div class="idrf-collage">
+        ${D.idrf.collage.map(c => `<div class="idrf-collage-item"><img src="${c.src}" alt="${c.alt}" loading="lazy"></div>`).join('')}
+      </div>
+
       <div class="media-grid-3" style="margin-bottom:24px">
         ${D.idrf.media.map(m => {
           const el = m.type === 'image'
@@ -364,6 +407,7 @@ fetch('data.json').then(r => r.json()).then(D => {
           return `<div class="idrf-card"><div class="idrf-card-media">${el}</div><p class="idrf-card-label">${m.label}</p></div>`;
         }).join('')}
       </div>
+
       <img src="${D.idrf.bannerUrl}" alt="IDRF stats" style="width:100%;border-radius:12px;margin-bottom:24px">
       <p style="text-align:center;color:var(--muted);font-size:14px;margin-bottom:16px">${D.idrf.cities}</p>
       <p style="text-align:center"><a href="${D.idrf.joinUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--gold);font-weight:600">Join IDRF Community →</a></p>
